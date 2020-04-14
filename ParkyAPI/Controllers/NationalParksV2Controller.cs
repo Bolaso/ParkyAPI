@@ -10,7 +10,7 @@ using ParkyAPI.Repository.IRepository;
 
 namespace ParkyAPI.Controllers
 {
-    [Route("api/v{version:apiversion}/nationparks")]
+    [Route("api/v{version:apiVersion}/nationalparks")]
     [ApiVersion("2.0")]
     //[Route("api/[controller]")]
     [ApiController]
