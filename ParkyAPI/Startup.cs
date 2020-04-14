@@ -48,8 +48,10 @@ namespace ParkyAPI
                 options.DefaultApiVersion = new ApiVersion(1, 0);
                 options.ReportApiVersions = true;
             });
+
+
             services.AddVersionedApiExplorer(options => options.GroupNameFormat = "'v'VVV");
-            
+
             services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
             services.AddSwaggerGen();
             //services.AddSwaggerGen(options => {
@@ -83,7 +85,9 @@ namespace ParkyAPI
 
             //    options.IncludeXmlComments(cmlCommentsFullPath);
             //});
+
             services.AddControllers();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -100,7 +104,7 @@ namespace ParkyAPI
             {
                 foreach (var desc in provider.ApiVersionDescriptions)
                     options.SwaggerEndpoint($"/swagger/{desc.GroupName}/swagger.json",
-                        desc.GroupName.ToLowerInvariant());
+                        desc.GroupName.ToUpperInvariant());
                 options.RoutePrefix = "";
             });
             //app.UseSwaggerUI(options =>

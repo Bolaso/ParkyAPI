@@ -2,25 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using ParkyWeb.Models;
-using ParkyWeb.Repository.IRepository;
+using MvcTest.Models;
+using MvcTest.Repository.IRepository;
 
-namespace ParkyWeb.Controllers
+namespace MvcTest.Controllers
 {
-    public class NationalParksController : Controller
+    public class NationalParkController : Controller
     {
         private readonly INationalParkRepository _nationalParkRepository;
 
-        public NationalParksController(INationalParkRepository nationalParkRepository)
+        public NationalParkController(INationalParkRepository nationalParkRepository)
         {
             _nationalParkRepository = nationalParkRepository;
         }
 
         public IActionResult Index()
         {
-            return View(new NationalPark() { } );
+            return View(new NationalPark() { });
         }
 
         public async Task<IActionResult> GetAllNationPark()

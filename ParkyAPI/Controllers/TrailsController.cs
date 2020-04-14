@@ -13,6 +13,8 @@ namespace ParkyAPI.Controllers
 {
     //[Route("api/[controller]")]
     [Route("api/v{version:apiVersion}/trails")]
+    //[Route("api/v1}/trails")]
+    //[ApiVersion("1.0")]
     [ApiController]
     //[ApiExplorerSettings(GroupName = "ParkyOpenAPISpecTrails")]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
