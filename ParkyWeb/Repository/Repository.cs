@@ -24,7 +24,7 @@ namespace ParkyWeb.Repository
             if (objToCreate != null)
             {
                 request.Content = new StringContent(
-                    JsonConvert.SerializeObject(objToCreate), Encoding.UTF8, "appliation/json");
+                    JsonConvert.SerializeObject(objToCreate), Encoding.UTF8, "application/json");
             }
             else
             {
@@ -94,7 +94,7 @@ namespace ParkyWeb.Repository
             if (objToUpdate != null)
             {
                 request.Content = new StringContent(
-                    JsonConvert.SerializeObject(objToUpdate), Encoding.UTF8, "appliation/json");
+                    JsonConvert.SerializeObject(objToUpdate), Encoding.UTF8, "application/json");
             }
             else
             {
